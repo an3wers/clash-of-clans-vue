@@ -1,0 +1,19 @@
+.footer {
+    // background-color: $g-0;
+    padding: 1rem 0;
+}
+
+.nav-footer {
+   
+
+    &__menu {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    :not(:last-child) {
+        margin-right: 1rem;
+    }
+}
+
+
