@@ -1,3 +1,5 @@
+// Конфиг всего веб-приложения
+
 export const app = {
     title: 'Clash of clans'
   }

@@ -1,7 +1,7 @@
 <template>
   <div class="">
     
-    <carousel :itemsToShow="2" :itemsToScroll="1" :wrapAround="false" :snapAlign="center">
+    <carousel :itemsToShow="1" :itemsToScroll="1" :wrapAround="true">
       <slide class="card__wrapper" v-for="item in items" :key="item.id">
         <Card
           :name="`${item.lvl} lvl`"
@@ -41,6 +41,7 @@
       </template>
 
     </carousel>
+
   </div>
 </template>
 

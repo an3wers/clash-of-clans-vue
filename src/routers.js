@@ -17,7 +17,14 @@ const routers = createRouter({
     {
       path: '/',
       name: 'home',
-      component: HomePage
+      component: HomePage,
+      // children: [
+      //   {
+      //     path: '/:itemAlias',
+      //     name: 'itemAlias',
+      //     component: Item
+      //   },
+      // ]
     },
     {
       path: '/about',
@@ -25,6 +32,7 @@ const routers = createRouter({
       component: AboutPage
     },
 
+    // Отрефакторить пути, чтобы заработала 404 страница
     {
       path: '/:itemAlias',
       name: 'itemAlias',
@@ -33,6 +41,7 @@ const routers = createRouter({
 
     {
       path: '/:CatchAll(.*)',
+      // path:'/:pathMatch(.*)*',
       name: '404',
       component: NotFoundPage
     }
