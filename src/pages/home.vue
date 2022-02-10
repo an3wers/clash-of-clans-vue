@@ -1,6 +1,5 @@
 <template>
-  <div class="">
-    
+  <div class="view-sm isCenter">
     <carousel :itemsToShow="1" :itemsToScroll="1" :wrapAround="true">
       <slide class="card__wrapper" v-for="item in items" :key="item.id">
         <Card
@@ -14,24 +13,9 @@
             {{ item.descr }}
           </template>
 
-        <!-- Вынести футер в отдельный компонент
-            
-            сложное дз: сделать страницу 404
-
-
-         -->
-
           <template v-slot:footer>
-            <div class="card-stats">
-              <div
-                v-for="(stat, index) in item.info"
-                :key="index"
-                class="one-third"
-              >
-                <div class="stat-value">{{ stat.value }}</div>
-                <div class="stat">{{ stat.title }}</div>
-              </div>
-            </div>
+            <!-- Дз. Компонент футер карточки -->
+            <card-footer :item="item"></card-footer>
           </template>
         </Card>
       </slide>
@@ -39,15 +23,14 @@
       <template #addons>
         <navigation />
       </template>
-
     </carousel>
-
   </div>
 </template>
 
 <script>
 import Card from '@/components/UI/Card'
 import items from '@/seeders/items.js'
+import CardFooter from '@/components/UI/CardFooter'
 
 // Импорт css карусели
 import 'vue3-carousel/dist/carousel.css'
@@ -59,12 +42,12 @@ export default {
     Card,
     Carousel,
     Slide,
-    Navigation
+    Navigation,
+    CardFooter
   },
   data() {
     return {
-      items: items,
-
+      items: items
     }
   }
 }

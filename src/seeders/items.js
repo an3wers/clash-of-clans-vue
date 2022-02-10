@@ -37,5 +37,31 @@ export default [
         {title: 'speed', value: '13'},
         {title: 'cost', value: '200'},
       ]
-    }
+    },
+    {
+      "id": 4,
+      "alias": "barbarian",
+      "title": "Barbarian",
+      "descr": "Consequatur cumque ratione autem consectetur pariatur a voluptatem porro ipsam quidem laboriosam reprehenderit, enim, amet veritatis?",
+      "img": require("@/assets/img/barbarian.png"),
+      "lvl": 6,
+      "info": [
+        {title: 'training', value: '60s'},
+        {title: 'speed', value: '20'},
+        {title: 'cost', value: '600'},
+      ]
+    },
+    {
+      "id": 5,
+      "alias": "giant",
+      "title": "Giant",
+      "descr": "Consequatur cumque ratione autem consectetur pariatur a voluptatem porro ipsam quidem laboriosam reprehenderit, enim, amet veritatis?",
+      "img": require("@/assets/img/giant.png"),
+      "lvl": 10,
+      "info": [
+        {title: 'training', value: '40s'},
+        {title: 'speed', value: '70'},
+        {title: 'cost', value: '800'},
+      ]
+    },
 ]

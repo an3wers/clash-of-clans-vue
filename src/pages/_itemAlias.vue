@@ -1,5 +1,7 @@
 <template>
-  <div class="wrapper-person">
+
+  <div class="view-sm isCenter">
+    <div class="wrapper-person">
     <div v-if="item">
       <img :src="item.img" :alt="item.descr" />
       <h1 style="color: #ffffff" class="title">{{ item.title }}</h1>
@@ -15,6 +17,9 @@
       <router-link to="/" class="btn btnPrimary">Back home</router-link>
     </div>
   </div>
+  </div>
+
+  
 </template>
 
 <script>
@@ -29,11 +34,19 @@ export default {
   },
 
   created() {
-    // ?
     const alias = this.$route.params.itemAlias
     const item = items.find(el => el.alias === alias)
-    // Переопределяем null на найденный в массиве items элемент
-    this.item = item
+
+    // Проверяем, если item есть, то переопределяем null на объект
+    if (item) {
+      this.item = item
+      // Иначе редирект на 404
+    } else {
+      this.$router.push({
+        name: '404',
+        params: { pathMatch: this.$route.path.substring(1).split('/') },
+      })
+    }
   }
 }
 </script>
@@ -41,14 +54,10 @@ export default {
 <style lang="scss" scoped>
 .wrapper-person {
   text-align: center;
-  
 }
 
 .card-stats {
-    border-radius: 50px;
-    margin: 30px 0;
+  border-radius: 50px;
+  margin: 30px 0;
 }
-
-
-
 </style>
